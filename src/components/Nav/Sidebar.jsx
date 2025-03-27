@@ -97,6 +97,20 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
             activeClass="active"
             className="whiteColor"
             style={{ padding: "10px 15px" }}
+            to="team"
+            spy={true}
+            smooth={true}
+            offset={-60}
+          >
+            Our Team
+          </Link>
+        </li>
+        <li className="semiBold font15 pointer">
+          <Link
+            onClick={() => toggleSidebar(!sidebarOpen)}
+            activeClass="active"
+            className="whiteColor"
+            style={{ padding: "10px 15px" }}
             to="contact"
             spy={true}
             smooth={true}
@@ -104,7 +118,8 @@ export default function Sidebar({ sidebarOpen, toggleSidebar }) {
           >
             Contact
           </Link>
-        </li>
+          </li>
+   
       </UlStyle>
       <UlStyle className="flexSpaceCenter">
         <li className="semiBold font15 pointer">
