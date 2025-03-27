@@ -2,259 +2,271 @@ import React from "react";
 import styled from "styled-components";
 // Components
 import ProjectBox from "../Elements/ProjectBox";
-import FullButton from "../Buttons/FullButton";
 // Assets
-import ProjectImg1 from "../../assets/img/projects/1.png";
-import ProjectImg2 from "../../assets/img/projects/2.png";
+import Deneth from "../../assets/img/team/deneth.jpg";
+import Nadun from "../../assets/img/team/nadun.jpg";
 import Oshadhi from "../../assets/img/team/oshadhi.jpg";
-import ProjectImg4 from "../../assets/img/projects/4.png";
-import ProjectImg5 from "../../assets/img/projects/5.png";
+import Nimsara from "../../assets/img/team/nimsara.jpg";
+import Thisaru from "../../assets/img/team/thisaru.jpg";
 
+const ArrowLeftIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="w-6 h-6"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
+  </svg>
+);
 
-export default function team() {
-    return (
-        <Wrapper id="team">
-            <div className="whiteBg">
-                <div className="container">
-                    <HeaderInfo>
-                        <h1 className="font40 extraBold">Our Team</h1>
-                        <p className="font13">
-                            Skilled innovators and tech experts dedicated to delivering advanced software solutions <br />
-                            that drive business growth and digital transformation.
-                        </p>
-                    </HeaderInfo>
-                    <div className="row textCenter">
-                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <div
-                                className="card"
-                                style={{
-                                    width: "20rem",
-                                    height: "26rem",
-                                    backgroundColor: "#f5f5f5",
-                                    borderRadius: "20px",
-                                }}
-                            >
-                                <div className="card-body">
-                                    <ProjectBox
-                                        img={ProjectImg1}
-                                        title="Deneth Pinsara"
-                                        text="Software Engineer - Fullstack"
-                                        action={() => alert("clicked")}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+const ArrowRightIcon = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={1.5}
+    stroke="currentColor"
+    className="w-6 h-6"
+  >
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+  </svg>
+);
 
-                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <div
-                                className="card"
-                                style={{
-                                    width: "20rem",
-                                    height: "26rem",
-                                    backgroundColor: "#f5f5f5",
-                                    borderRadius: "20px",
-                                }}
-                            >
-                                <div className="card-body">
-                                    <ProjectBox
-                                        img={ProjectImg2}
-                                        title="Nadun Dilshan"
-                                        text="Associate Software Engineer - Fullstack"
-                                        action={() => alert("clicked")}
-                                    />
-                                </div>
-                            </div>
-                        </div>
+export default function Team() {
+  const teamMembers = [
+    { 
+      img: Deneth, 
+      name: "Deneth Pinsara", 
+      role: "Software Engineer - Fullstack",
+      link: "https://deneth-pinsara.github.io/"
+    },
+    { 
+      img: Nadun, 
+      name: "Nadun Dilshan", 
+      role: "Associate Software Engineer - Fullstack",
+      link: "https://nadundilshan.netlify.app/"
+    },
+    { 
+      img: Oshadhi, 
+      name: "Oshadhi Anjana", 
+      role: "Associate Software Engineer - Fullstack",
+      link: "https://www.linkedin.com/in/oshadhi-anjana-kumarasinghe-a784aa213/"
+    },
+    { 
+      img: Nimsara, 
+      name: "Dilruk Nimsara", 
+      role: "Software Engineer - Fullstack",
+      link: "https://www.linkedin.com/in/nimsara-mahagedara/"
+    },
+    { 
+      img: Thisaru, 
+      name: "Thisaru Dilhara", 
+      role: "Web Developer",
+      link: "https://it21159176.github.io/"
+    },
+  ];
 
-                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <div
-                                className="card"
-                                style={{
-                                    width: "20rem",
-                                    height: "26rem",
-                                    backgroundColor: "#f5f5f5",
-                                    borderRadius: "20px",
-                                }}
-                            >
-                                <div className="card-body">
-                                    <div style={{ width: "14rem", height: "10rem", margin: "0 auto" }}>
-                                        <ProjectBox
-                                            img={Oshadhi}
-                                            title="Oshadhi Anjana"
-                                            text="Associate Software Engineer - Fullstack"
-                                            action={() =>
-                                                window.open(
-                                                    "https://www.linkedin.com/in/oshadhi-anjana-kumarasinghe-a784aa213",
-                                                    "_blank"
-                                                )} />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+  const [currentSlide, setCurrentSlide] = React.useState(0);
+  const slidesToShow = 3;
 
-
-                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <div
-                                className="card"
-                                style={{
-                                    width: "20rem",
-                                    height: "26rem",
-                                    backgroundColor: "#f5f5f5",
-                                    borderRadius: "20px",
-                                }}
-                            >
-                                <div className="card-body">
-                                    <ProjectBox
-                                        img={ProjectImg4}
-                                        title="Dilruk Nimsara"
-                                        text="Software Engineer - Fullstack"
-                                        action={() => alert("clicked")}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                            <div
-                                className="card"
-                                style={{
-                                    width: "20rem",
-                                    height: "26rem",
-                                    backgroundColor: "#f5f5f5",
-                                    borderRadius: "20px",
-                                }}
-                            >
-                                <div className="card-body">
-                                    <ProjectBox
-                                        img={ProjectImg5}
-                                        title="Thisaru Dilhara"
-                                        text="Web Developer"
-                                        action={() => alert("clicked")}
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div className="row flexCenter">
-                    <div style={{ margin: "40px 0", width: "200px" }}>
-                        {/* <FullButton title="Load More" action={() => alert("clicked")} /> */}
-                    </div>
-                </div>
-            </div>
-
-            {/* <div className="lightBg">
-        <div className="container">
-          <Advertising className="flexSpaceCenter">
-            <AddLeft>
-              <AddLeftInner>
-                <ImgWrapper className="flexCenter">
-                  <img className="radius8" src={AddImage2} alt="add" />
-                </ImgWrapper>
-              </AddLeftInner>
-            </AddLeft>
-            <AddRight>
-              <h4 className="font15 semiBold">A few words about company</h4>
-              <h2 className="font40 extraBold">A Study of Creativity</h2>
-              <p className="font12">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              </p>
-              <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0" }}>
-                <div style={{ width: "190px" }}>
-                  <FullButton title="Get Started" action={() => alert("clicked")} />
-                </div>
-                <div style={{ width: "190px", marginLeft: "15px" }}>
-                  <FullButton title="Contact Us" action={() => alert("clicked")} border />
-                </div>
-              </ButtonsRow>
-            </AddRight>
-          </Advertising>
-        </div>
-      </div> */}
-        </Wrapper>
+  const nextSlide = () => {
+    setCurrentSlide((prev) => 
+      prev + slidesToShow >= teamMembers.length ? 0 : prev + 1
     );
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => 
+      prev === 0 ? teamMembers.length - slidesToShow : prev - 1
+    );
+  };
+
+  const visibleMembers = teamMembers.slice(
+    currentSlide, 
+    Math.min(currentSlide + slidesToShow, teamMembers.length)
+  );
+
+  const remainingSlides = slidesToShow - visibleMembers.length;
+  if (remainingSlides > 0) {
+    visibleMembers.push(...teamMembers.slice(0, remainingSlides));
+  }
+
+  const handleMemberClick = (link) => {
+    window.open(link, '_blank');
+  };
+
+  return (
+    <Wrapper id="team">
+      <div className="whiteBg">
+        <div className="container">
+          <HeaderInfo>
+            <h1 className="font40 extraBold">Our Team</h1>
+            <p className="font13">
+              Skilled innovators and tech experts dedicated to delivering advanced software solutions <br />
+              that drive business growth and digital transformation.
+            </p>
+          </HeaderInfo>
+
+          <SliderContainer>
+            <ArrowButton direction="left" onClick={prevSlide}>
+              <ArrowLeftIcon />
+            </ArrowButton>
+
+            <SliderContent>
+              {visibleMembers.map((member, index) => (
+                <TeamCard key={`${member.name}-${index}`}>
+                  <div className="card" onClick={() => handleMemberClick(member.link)}>
+                    <ProjectBox
+                      img={member.img}
+                      title={member.name}
+                      text={member.role}
+                      action={() => handleMemberClick(member.link)}
+                    />
+                  </div>
+                </TeamCard>
+              ))}
+            </SliderContent>
+
+            <ArrowButton direction="right" onClick={nextSlide}>
+              <ArrowRightIcon />
+            </ArrowButton>
+          </SliderContainer>
+
+          <DotsContainer>
+            {Array.from({ length: Math.ceil(teamMembers.length / slidesToShow) }).map((_, index) => (
+              <Dot
+                key={index}
+                active={index === Math.floor(currentSlide / slidesToShow)}
+                onClick={() => setCurrentSlide(index * slidesToShow)}
+              />
+            ))}
+          </DotsContainer>
+        </div>
+        <div className="row flexCenter">
+          <div style={{ margin: "20px 0", width: "200px" }}>
+          </div>
+        </div>
+      </div>
+    </Wrapper>
+  );
 }
 
 const Wrapper = styled.section`
   width: 100%;
 `;
+
 const HeaderInfo = styled.div`
   @media (max-width: 860px) {
     text-align: center;
   }
 `;
-const Advertising = styled.div`
-  padding: 100px 0;
-  margin: 100px 0;
+
+const SliderContainer = styled.div`
   position: relative;
-  @media (max-width: 1160px) {
-    padding: 60px 0 40px 0;
-  }
-  @media (max-width: 860px) {
-    flex-direction: column;
-    padding: 0 0 30px 0;
-    margin: 80px 0 0px 0;
-  }
-`;
-const ButtonsRow = styled.div`
-  @media (max-width: 860px) {
-    justify-content: space-between;
-  }
-`;
-const AddLeft = styled.div`
-  position: relative;
-  width: 50%;
-  p {
-    max-width: 475px;
-  }
-  @media (max-width: 860px) {
-    width: 80%;
-    order: 2;
-    text-align: center;
-    h2 {
-      line-height: 3rem;
-      margin: 15px 0;
-    }
-    p {
-      margin: 0 auto;
-    }
-  }
-`;
-const AddRight = styled.div`
-  width: 50%;
-  @media (max-width: 860px) {
-    width: 80%;
-    order: 2;
-  }
-`;
-const AddLeftInner = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px 0;
   width: 100%;
-  position: absolute;
-  top: -300px;
-  left: 0;
-  @media (max-width: 1190px) {
-    top: -250px;
-  }
-  @media (max-width: 920px) {
-    top: -200px;
-  }
-  @media (max-width: 860px) {
-    order: 1;
-    position: relative;
-    top: -60px;
-    left: 0;
-  }
 `;
-const ImgWrapper = styled.div`
-  width: 100%;
-  padding: 0 15%;
-  img {
+
+const SliderContent = styled.div`
+  display: flex;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+`;
+
+const TeamCard = styled.div`
+  flex: 0 0 30%;
+  max-width: 30%;
+  transition: all 0.3s ease;
+  
+  .card {
     width: 100%;
-    height: auto;
+    height: 350px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
   }
-  @media (max-width: 400px) {
-    padding: 0;
+
+  @media (max-width: 768px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+`;
+
+const ArrowButton = styled.button`
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  margin: 0 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(200, 200, 200, 0.9);
+    transform: scale(1.05);
+  }
+`;
+
+const DotsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 10px;
+`;
+
+const Dot = styled.div`
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: ${(props) => (props.active ? "#333" : "#ccc")};
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
   }
 `;
