@@ -20,9 +20,9 @@ export default function Projects() {
           <HeaderInfo>
             <h1 className="font40 extraBold">Our Top Projects</h1>
             <p className="font13">
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut
+            Our team specializes in delivering innovative and high-performance solutions across various industries. From advanced web applications to AI-powered systems, we build scalable, secure, and user-friendly platforms tailored to meet business needs.
               <br />
-              labore et dolore magna aliquyam erat, sed diam voluptua.
+              Explore our top projects and see how we drive digital transformation with cutting-edge technology.
             </p>
           </HeaderInfo>
           <div className="row textCenter">
@@ -48,7 +48,7 @@ export default function Projects() {
                 img={ProjectImg3}
                 title="Leave Management System"
                 text="PHP and MySQL-powered Leave Management System with Tailwind CSS for efficient leave tracking.."
-                action={() => alert("clicked")}
+                action={() => window.open("https://github.com/IT21158704/Leave-Management-System")}
               />
             </div>
           </div>
@@ -56,9 +56,9 @@ export default function Projects() {
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg4}
-                title="Pharmasy Stock Management System"
+                title="Stock Management System"
                 text="Efficient MERN-based Pharmacy Stock Management System for seamless inventory tracking and control"
-                action={() => alert("clicked")}
+                action={() => window.open("https://github.com/Nimsaramahagedara/Pharmacy-Stock-Management-System")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -66,7 +66,7 @@ export default function Projects() {
                 img={ProjectImg5}
                 title="Dry Food Mart"
                 text="Scalable MERN-based Dry Food Mart for seamless online ordering and inventory management."
-                action={() => alert("clicked")}
+                action={() => window.open("https://github.com/Deneth-Pinsara/Dry_Food_Mart")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
@@ -78,42 +78,8 @@ export default function Projects() {
               />
             </div>
           </div>
-          <div className="row flexCenter">
-            <div style={{ margin: "50px 0", width: "200px" }}>
-              <FullButton title="Load More" action={() => alert("clicked")} />
-            </div>
-          </div>
         </div>
       </div>
-      {/* <div className="lightBg">
-        <div className="container">
-          <Advertising className="flexSpaceCenter">
-            <AddLeft>
-              <AddLeftInner>
-                <ImgWrapper className="flexCenter">
-                  <img className="radius8" src={AddImage2} alt="add" />
-                </ImgWrapper>
-              </AddLeftInner>
-            </AddLeft>
-            <AddRight>
-              <h4 className="font15 semiBold">A few words about company</h4>
-              <h2 className="font40 extraBold">A Study of Creativity</h2>
-              <p className="font12">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed
-                diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
-              </p>
-              <ButtonsRow className="flexNullCenter" style={{ margin: "30px 0" }}>
-                <div style={{ width: "190px" }}>
-                  <FullButton title="Get Started" action={() => alert("clicked")} />
-                </div>
-                <div style={{ width: "190px", marginLeft: "15px" }}>
-                  <FullButton title="Contact Us" action={() => alert("clicked")} border />
-                </div>
-              </ButtonsRow>
-            </AddRight>
-          </Advertising>
-        </div>
-      </div> */}
     </Wrapper>
   );
 }
