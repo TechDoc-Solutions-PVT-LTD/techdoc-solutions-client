@@ -9,11 +9,12 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-helmet": "^6.1.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.4",
     "react-slick": "^0.28.1",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.1",
+    "techdoc-solutions-client": "file:",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -42,6 +43,6 @@
     ]
   },
   "devDependencies": {
-    "webpack": "^4.44.2"
+    "webpack": "^5.98.0"
   }
 }
