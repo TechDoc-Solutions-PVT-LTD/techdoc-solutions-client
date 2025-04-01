@@ -64,62 +64,6 @@ export default function Services() {
             </ServiceBoxWrapper>
           </ServiceBoxRow>
         </div>
-        <div className="lightBg">
-          <div className="container">
-            <Advertising className="flexSpaceCenter">
-              <AddLeft>
-                <h4 className="font15 semiBold">A few words about our team</h4>
-                <h2 className="font40 extraBold">A Pack of Creativity</h2>
-                <p className="font12">
-                  Our team at TechDoc Solutions is a dynamic group of
-                  innovators, developers, and problem-solvers dedicated to
-                  building cutting-edge software solutions. With a passion for
-                  technology and a commitment to excellence, we collaborate to
-                  turn ideas into reality, ensuring efficiency, scalability, and
-                  success for our clients.
-                </p>
-                {/* <ButtonsRow
-                  className="flexNullCenter"
-                  style={{ margin: "30px 0" }}
-                >
-                  <div style={{ width: "190px" }}>
-                    <FullButton
-                      title="Get Started"
-                      action={() => alert("clicked")}
-                    />
-                  </div>
-                  <div style={{ width: "190px", marginLeft: "15px" }}>
-                    <FullButton
-                      title="Contact Us"
-                      action={() => alert("clicked")}
-                      border
-                    />
-                  </div>
-                </ButtonsRow> */}
-              </AddLeft>
-              <AddRight>
-                <AddRightInner>
-                  <div className="flexNullCenter">
-                    <AddImgWrapp1 className="flexCenter">
-                      <img src={AddImage1} alt="office" />
-                    </AddImgWrapp1>
-                    <AddImgWrapp2>
-                      <img src={AddImage2} alt="office" />
-                    </AddImgWrapp2>
-                  </div>
-                  <div className="flexNullCenter">
-                    <AddImgWrapp3>
-                      <img src={AddImage3} alt="office" />
-                    </AddImgWrapp3>
-                    <AddImgWrapp4>
-                      <img src={AddImage4} alt="office" />
-                    </AddImgWrapp4>
-                  </div>
-                </AddRightInner>
-              </AddRight>
-            </Advertising>
-          </div>
-        </div>
       </div>
     </Wrapper>
   );
