@@ -16,6 +16,7 @@ export default function ProjectBox({ img, title, text, action}) {
 const Wrapper = styled.div`
   width: 100%;
   margin-top: 30px;
+  margin-bottom: 60px;
   position: relative;
   overflow: hidden;
 
@@ -32,12 +33,11 @@ const Wrapper = styled.div`
   }
 
   &::after {
-    content: "Click Here Go To Site";
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
     color: white;
     padding: 10px 15px;
     font-size: 14px;
