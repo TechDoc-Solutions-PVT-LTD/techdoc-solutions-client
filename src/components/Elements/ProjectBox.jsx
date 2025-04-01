@@ -16,15 +16,45 @@ export default function ProjectBox({ img, title, text, action}) {
 const Wrapper = styled.div`
   width: 100%;
   margin-top: 30px;
+  position: relative;
+  overflow: hidden;
+
   img {
     width: 100%;
-    height: auto;
+    height: 200px;
     margin: 20px 0;
+    outline: black solid 1px;
+    transition: 0.3s ease-in-out;
   }
+
+  &:hover img {
+    filter: brightness(0.5);
+  }
+
+  &::after {
+    content: "Click Here Go To Site";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    opacity: 1;
+  }
+
   h3 {
     padding-bottom: 10px;
   }
 `;
+
 const ImgBtn = styled.button`
   background-color: transparent;
   border: 0px;

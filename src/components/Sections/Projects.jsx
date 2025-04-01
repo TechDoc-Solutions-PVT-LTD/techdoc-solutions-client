@@ -8,7 +8,7 @@ import ProjectImg1 from "../../assets/img/projects/1.png";
 import ProjectImg2 from "../../assets/img/projects/2.png";
 import ProjectImg3 from "../../assets/img/projects/3.png";
 import ProjectImg4 from "../../assets/img/projects/4.png";
-import ProjectImg5 from "../../assets/img/projects/5.png";
+import ProjectImg5 from "../../assets/img/projects/5.jpg";
 import ProjectImg6 from "../../assets/img/projects/6.png";
 import AddImage2 from "../../assets/img/add/add2.png";
 
@@ -29,24 +29,25 @@ export default function Projects() {
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg1}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                title="Learning Management System"
+                text="Advanced MERN-based Learning Management System for seamless course management and student engagement."
+                action={() => window.open("https://darmapala-client.onrender.com/", "_blank")}
               />
+
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg2}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
-                action={() => alert("clicked")}
+                title="Pro Cleaning Solution"
+                text="React-powered Pro Cleaning Solutions for efficient cleaning service management and customer engagement."
+                action={() => window.open("https://kleanovation.onrender.com/", "_blank")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg3}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Leave Management System"
+                text="PHP and MySQL-powered Leave Management System with Tailwind CSS for efficient leave tracking.."
                 action={() => alert("clicked")}
               />
             </div>
@@ -55,24 +56,24 @@ export default function Projects() {
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg4}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Pharmasy Stock Management System"
+                text="Efficient MERN-based Pharmacy Stock Management System for seamless inventory tracking and control"
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg5}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Dry Food Mart"
+                text="Scalable MERN-based Dry Food Mart for seamless online ordering and inventory management."
                 action={() => alert("clicked")}
               />
             </div>
             <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
               <ProjectBox
                 img={ProjectImg6}
-                title="Awesome Project"
-                text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor."
+                title="Airdrop Site"
+                text="Secure and efficient MERN-based Airdrop site for seamless token distribution and management."
                 action={() => alert("clicked")}
               />
             </div>
@@ -191,8 +192,8 @@ const ImgWrapper = styled.div`
   width: 100%;
   padding: 0 15%;
   img {
-    width: 100%;
-    height: auto;
+    width: 50%;
+    height: 200;
   }
   @media (max-width: 400px) {
     padding: 0;
