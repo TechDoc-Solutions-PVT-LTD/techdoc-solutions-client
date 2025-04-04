@@ -216,14 +216,13 @@ const SliderContent = styled.div`
 `;
 
 const TeamCard = styled.div`
-  flex: 0 0 ${props => 100 / props.slidesToShow - 5}%;
-  max-width: ${props => 100 / props.slidesToShow - 5}%;
+  flex: 0 0 30%;
+  max-width: 30%;
   transition: all 0.3s ease;
-  padding: 0 10px;
   
   .card {
     width: 100%;
-    height: 350px;
+    height: 450px;
     background-color: #f5f5f5;
     border-radius: 20px;
     padding: 20px;
@@ -242,8 +241,8 @@ const TeamCard = styled.div`
     }
     
     img {
-      width: 120px;
-      height: 120px;
+      width: 150px;
+      height: 150px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #fff;
@@ -257,23 +256,9 @@ const TeamCard = styled.div`
     }
   }
 
-  @media (max-width: 1024px) {
-    flex: 0 0 ${props => props.slidesToShow === 2 ? '45%' : '90%'};
-    max-width: ${props => props.slidesToShow === 2 ? '45%' : '90%'};
-  }
-
   @media (max-width: 768px) {
-    flex: 0 0 90%;
-    max-width: 90%;
-    
-    .card {
-      height: 300px;
-      
-      img {
-        width: 100px;
-        height: 100px;
-      }
-    }
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 `;
 
