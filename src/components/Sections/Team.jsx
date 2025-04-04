@@ -70,29 +70,46 @@ export default function Team() {
   ];
 
   const [currentSlide, setCurrentSlide] = React.useState(0);
-  const slidesToShow = 3;
+  const [slidesToShow, setSlidesToShow] = React.useState(3);
+
+  React.useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSlidesToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setSlidesToShow(2);
+      } else {
+        setSlidesToShow(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => 
-      prev + slidesToShow >= teamMembers.length ? 0 : prev + 1
+      prev + 1 >= teamMembers.length ? 0 : prev + 1
     );
   };
 
   const prevSlide = () => {
     setCurrentSlide((prev) => 
-      prev === 0 ? teamMembers.length - slidesToShow : prev - 1
+      prev === 0 ? teamMembers.length - 1 : prev - 1
     );
   };
 
-  const visibleMembers = teamMembers.slice(
-    currentSlide, 
-    Math.min(currentSlide + slidesToShow, teamMembers.length)
-  );
+  const getVisibleMembers = () => {
+    let visible = [];
+    for (let i = 0; i < slidesToShow; i++) {
+      const index = (currentSlide + i) % teamMembers.length;
+      visible.push(teamMembers[index]);
+    }
+    return visible;
+  };
 
-  const remainingSlides = slidesToShow - visibleMembers.length;
-  if (remainingSlides > 0) {
-    visibleMembers.push(...teamMembers.slice(0, remainingSlides));
-  }
+  const visibleMembers = getVisibleMembers();
 
   const handleMemberClick = (link) => {
     window.open(link, '_blank');
@@ -117,7 +134,7 @@ export default function Team() {
 
             <SliderContent>
               {visibleMembers.map((member, index) => (
-                <TeamCard key={`${member.name}-${index}`}>
+                <TeamCard key={`${member.name}-${index}`} slidesToShow={slidesToShow}>
                   <div className="card" onClick={() => handleMemberClick(member.link)}>
                     <ProjectBox
                       img={member.img}
@@ -136,18 +153,14 @@ export default function Team() {
           </SliderContainer>
 
           <DotsContainer>
-            {Array.from({ length: Math.ceil(teamMembers.length / slidesToShow) }).map((_, index) => (
+            {teamMembers.map((_, index) => (
               <Dot
                 key={index}
-                active={index === Math.floor(currentSlide / slidesToShow)}
-                onClick={() => setCurrentSlide(index * slidesToShow)}
+                active={index === currentSlide}
+                onClick={() => setCurrentSlide(index)}
               />
             ))}
           </DotsContainer>
-        </div>
-        <div className="row flexCenter">
-          <div style={{ margin: "20px 0", width: "200px" }}>
-          </div>
         </div>
       </div>
     </Wrapper>
@@ -156,11 +169,21 @@ export default function Team() {
 
 const Wrapper = styled.section`
   width: 100%;
+  padding: 50px 0;
 `;
 
 const HeaderInfo = styled.div`
-  @media (max-width: 860px) {
-    text-align: center;
+  text-align: center;
+  margin-bottom: 50px;
+  
+  p {
+    margin-top: 20px;
+    
+    br {
+      @media (max-width: 768px) {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -175,18 +198,24 @@ const SliderContainer = styled.div`
 
 const SliderContent = styled.div`
   display: flex;
-  gap: 30px;
-  width: 90%;
+  gap: 20px;
+  width: 100%;
   max-width: 1200px;
   justify-content: center;
   align-items: center;
-  padding: 0 20px;
+  padding: 0 10px;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding: 0;
+  }
 `;
 
 const TeamCard = styled.div`
-  flex: 0 0 30%;
-  max-width: 30%;
+  flex: 0 0 ${props => 100 / props.slidesToShow - 5}%;
+  max-width: ${props => 100 / props.slidesToShow - 5}%;
   transition: all 0.3s ease;
+  padding: 0 10px;
   
   .card {
     width: 100%;
@@ -209,8 +238,8 @@ const TeamCard = styled.div`
     }
     
     img {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #fff;
@@ -224,9 +253,23 @@ const TeamCard = styled.div`
     }
   }
 
+  @media (max-width: 1024px) {
+    flex: 0 0 ${props => props.slidesToShow === 2 ? '45%' : '90%'};
+    max-width: ${props => props.slidesToShow === 2 ? '45%' : '90%'};
+  }
+
   @media (max-width: 768px) {
-    flex: 0 0 100%;
-    max-width: 100%;
+    flex: 0 0 90%;
+    max-width: 90%;
+    
+    .card {
+      height: 300px;
+      
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    }
   }
 `;
 
@@ -234,14 +277,14 @@ const ArrowButton = styled.button`
   background: rgba(255, 255, 255, 0.9);
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 10;
-  margin: 0 10px;
+  margin: 0 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 
@@ -249,18 +292,23 @@ const ArrowButton = styled.button`
     background: rgba(200, 200, 200, 0.9);
     transform: scale(1.05);
   }
+
+  @media (max-width: 768px) {
+    width: 35px;
+    height: 35px;
+  }
 `;
 
 const DotsContainer = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  gap: 10px;
+  gap: 8px;
 `;
 
 const Dot = styled.div`
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   background: ${(props) => (props.active ? "#333" : "#ccc")};
   cursor: pointer;
@@ -268,5 +316,10 @@ const Dot = styled.div`
 
   &:hover {
     transform: scale(1.2);
+  }
+
+  @media (max-width: 768px) {
+    width: 8px;
+    height: 8px;
   }
 `;
