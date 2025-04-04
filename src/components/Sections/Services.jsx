@@ -1,83 +1,68 @@
 import React from "react";
 import styled from "styled-components";
 // Components
-import ProjectBox from "../Elements/ProjectBox";
+// import ClientSlider from "../Elements/ClientSlider";
+import ServiceBox from "../Elements/ServiceBox";
 // import FullButton from "../Buttons/FullButton";
-// Assets
-import ProjectImg1 from "../../assets/img/projects/1.png";
-import ProjectImg2 from "../../assets/img/projects/2.png";
-import ProjectImg3 from "../../assets/img/projects/3.png";
-import ProjectImg4 from "../../assets/img/projects/4.png";
-import ProjectImg5 from "../../assets/img/projects/5.jpg";
-import ProjectImg6 from "../../assets/img/projects/6.png";
-// import AddImage2 from "../../assets/img/add/add2.png";
+// // Assets
+// import AddImage1 from "../../assets/img/add/1.png";
+// import AddImage2 from "../../assets/img/add/2.png";
+// import AddImage3 from "../../assets/img/add/3.png";
+// import AddImage4 from "../../assets/img/add/4.png";
+// import ConsultingIcon from "../../assets/svg/Services/ConsultingIcon";
 
-export default function Projects() {
+export default function Services() {
   return (
-    <Wrapper id="projects">
-      <div className="whiteBg">
+    <Wrapper id="services">
+      {/* <div className="lightBg" style={{ padding: "50px 0" }}>
+        <div className="container">
+          <ClientSlider />
+        </div>
+      </div> */}
+      <div className="whiteBg" style={{ padding: "60px 0" }}>
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Top Projects</h1>
+            <h1 className="font40 extraBold">Our Awesome Services</h1>
             <p className="font13">
-            Our team specializes in delivering innovative and high-performance solutions across various industries. From advanced web applications to AI-powered systems, we build scalable, secure, and user-friendly platforms tailored to meet business needs.
+              At TechDoc Solutions, we deliver top-tier software solutions
+              tailored to your business needs.
               <br />
-              Explore our top projects and see how we drive digital transformation with cutting-edge technology.
+              From web and mobile development to AI-driven automation and cloud
+              solutions, we ensure innovation, efficiency, and scalability.
+              <br />
+              Let’s build the future together!
             </p>
           </HeaderInfo>
-          <div className="row textCenter">
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg1}
-                title="Learning Management System"
-                text="Advanced MERN-based Learning Management System for seamless course management and student engagement."
-                action={() => window.open("https://darmapala-client.onrender.com/", "_blank")}
+          <ServiceBoxRow className="flex">
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="monitor"
+                title="Web Development"
+                subtitle="Creating responsive, dynamic, and user-friendly websites tailored to your business needs, leveraging the latest technologies."
               />
-
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg2}
-                title="Pro Cleaning Solution"
-                text="React-powered Pro Cleaning Solutions for efficient cleaning service management and customer engagement."
-                action={() => window.open("https://kleanovation.onrender.com/", "_blank")}
+            </ServiceBoxWrapper>
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="roller"
+                title="Web Designing"
+                subtitle="We create visually stunning and user-friendly websites that are both functional and responsive across all devices."
               />
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg3}
-                title="Leave Management System"
-                text="PHP and MySQL-powered Leave Management System with Tailwind CSS for efficient leave tracking.."
-                action={() => window.open("https://github.com/IT21158704/Leave-Management-System")}
+            </ServiceBoxWrapper>
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="maintenance"
+                title="Maintenance"
+                subtitle="We ensure your systems run smoothly with regular updates, security patches, and performance optimizations, keeping your software reliable and efficient."
               />
-            </div>
-          </div>
-          <div className="row textCenter">
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg4}
-                title="Stock Management System"
-                text="Efficient MERN-based Pharmacy Stock Management System for seamless inventory tracking and control"
-                action={() => window.open("https://github.com/Nimsaramahagedara/Pharmacy-Stock-Management-System")}
+            </ServiceBoxWrapper>
+            <ServiceBoxWrapper>
+              <ServiceBox
+                icon="consulting"
+                title="consulting"
+                subtitle="Our consulting services help businesses develop efficient strategies, optimize processes, and achieve sustainable growth through expert guidance and tailored solutions."
               />
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg5}
-                title="Dry Food Mart"
-                text="Scalable MERN-based Dry Food Mart for seamless online ordering and inventory management."
-                action={() => window.open("https://github.com/Deneth-Pinsara/Dry_Food_Mart")}
-              />
-            </div>
-            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-              <ProjectBox
-                img={ProjectImg6}
-                title="Airdrop Site"
-                text="Secure and efficient MERN-based Airdrop site for seamless token distribution and management."
-                action={() => alert("clicked")}
-              />
-            </div>
-          </div>
+            </ServiceBoxWrapper>
+          </ServiceBoxRow>
         </div>
       </div>
     </Wrapper>
@@ -86,6 +71,21 @@ export default function Projects() {
 
 const Wrapper = styled.section`
   width: 100%;
+`;
+const ServiceBoxRow = styled.div`
+  @media (max-width: 860px) {
+    flex-direction: column;
+  }
+`;
+const ServiceBoxWrapper = styled.div`
+  width: 20%;
+  margin-right: 5%;
+  padding: 80px 0;
+  @media (max-width: 860px) {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+  }
 `;
 const HeaderInfo = styled.div`
   @media (max-width: 860px) {
