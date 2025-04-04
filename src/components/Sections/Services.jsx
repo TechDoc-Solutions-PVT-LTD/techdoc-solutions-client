@@ -1,68 +1,83 @@
 import React from "react";
 import styled from "styled-components";
 // Components
-import ClientSlider from "../Elements/ClientSlider";
-import ServiceBox from "../Elements/ServiceBox";
-import FullButton from "../Buttons/FullButton";
+import ProjectBox from "../Elements/ProjectBox";
+// import FullButton from "../Buttons/FullButton";
 // Assets
-import AddImage1 from "../../assets/img/add/1.png";
-import AddImage2 from "../../assets/img/add/2.png";
-import AddImage3 from "../../assets/img/add/3.png";
-import AddImage4 from "../../assets/img/add/4.png";
-import ConsultingIcon from "../../assets/svg/Services/ConsultingIcon";
+import ProjectImg1 from "../../assets/img/projects/1.png";
+import ProjectImg2 from "../../assets/img/projects/2.png";
+import ProjectImg3 from "../../assets/img/projects/3.png";
+import ProjectImg4 from "../../assets/img/projects/4.png";
+import ProjectImg5 from "../../assets/img/projects/5.jpg";
+import ProjectImg6 from "../../assets/img/projects/6.png";
+// import AddImage2 from "../../assets/img/add/add2.png";
 
-export default function Services() {
+export default function Projects() {
   return (
-    <Wrapper id="services">
-      {/* <div className="lightBg" style={{ padding: "50px 0" }}>
-        <div className="container">
-          <ClientSlider />
-        </div>
-      </div> */}
-      <div className="whiteBg" style={{ padding: "60px 0" }}>
+    <Wrapper id="projects">
+      <div className="whiteBg">
         <div className="container">
           <HeaderInfo>
-            <h1 className="font40 extraBold">Our Awesome Services</h1>
+            <h1 className="font40 extraBold">Our Top Projects</h1>
             <p className="font13">
-              At TechDoc Solutions, we deliver top-tier software solutions
-              tailored to your business needs.
+            Our team specializes in delivering innovative and high-performance solutions across various industries. From advanced web applications to AI-powered systems, we build scalable, secure, and user-friendly platforms tailored to meet business needs.
               <br />
-              From web and mobile development to AI-driven automation and cloud
-              solutions, we ensure innovation, efficiency, and scalability.
-              <br />
-              Let’s build the future together!
+              Explore our top projects and see how we drive digital transformation with cutting-edge technology.
             </p>
           </HeaderInfo>
-          <ServiceBoxRow className="flex">
-            <ServiceBoxWrapper>
-              <ServiceBox
-                icon="monitor"
-                title="Web Development"
-                subtitle="Creating responsive, dynamic, and user-friendly websites tailored to your business needs, leveraging the latest technologies."
+          <div className="row textCenter">
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg1}
+                title="Learning Management System"
+                text="Advanced MERN-based Learning Management System for seamless course management and student engagement."
+                action={() => window.open("https://darmapala-client.onrender.com/", "_blank")}
               />
-            </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
-              <ServiceBox
-                icon="roller"
-                title="Web Designing"
-                subtitle="We create visually stunning and user-friendly websites that are both functional and responsive across all devices."
+
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg2}
+                title="Pro Cleaning Solution"
+                text="React-powered Pro Cleaning Solutions for efficient cleaning service management and customer engagement."
+                action={() => window.open("https://kleanovation.onrender.com/", "_blank")}
               />
-            </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
-              <ServiceBox
-                icon="maintenance"
-                title="Maintenance"
-                subtitle="We ensure your systems run smoothly with regular updates, security patches, and performance optimizations, keeping your software reliable and efficient."
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg3}
+                title="Leave Management System"
+                text="PHP and MySQL-powered Leave Management System with Tailwind CSS for efficient leave tracking.."
+                action={() => window.open("https://github.com/IT21158704/Leave-Management-System")}
               />
-            </ServiceBoxWrapper>
-            <ServiceBoxWrapper>
-              <ServiceBox
-                icon="consulting"
-                title="consulting"
-                subtitle="Our consulting services help businesses develop efficient strategies, optimize processes, and achieve sustainable growth through expert guidance and tailored solutions."
+            </div>
+          </div>
+          <div className="row textCenter">
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg4}
+                title="Stock Management System"
+                text="Efficient MERN-based Pharmacy Stock Management System for seamless inventory tracking and control"
+                action={() => window.open("https://github.com/Nimsaramahagedara/Pharmacy-Stock-Management-System")}
               />
-            </ServiceBoxWrapper>
-          </ServiceBoxRow>
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg5}
+                title="Dry Food Mart"
+                text="Scalable MERN-based Dry Food Mart for seamless online ordering and inventory management."
+                action={() => window.open("https://github.com/Deneth-Pinsara/Dry_Food_Mart")}
+              />
+            </div>
+            <div className="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+              <ProjectBox
+                img={ProjectImg6}
+                title="Airdrop Site"
+                text="Secure and efficient MERN-based Airdrop site for seamless token distribution and management."
+                action={() => alert("clicked")}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -72,122 +87,8 @@ export default function Services() {
 const Wrapper = styled.section`
   width: 100%;
 `;
-const ServiceBoxRow = styled.div`
-  @media (max-width: 860px) {
-    flex-direction: column;
-  }
-`;
-const ServiceBoxWrapper = styled.div`
-  width: 20%;
-  margin-right: 5%;
-  padding: 80px 0;
-  @media (max-width: 860px) {
-    width: 100%;
-    text-align: center;
-    padding: 40px 0;
-  }
-`;
 const HeaderInfo = styled.div`
   @media (max-width: 860px) {
     text-align: center;
-  }
-`;
-const Advertising = styled.div`
-  margin: 80px 0;
-  padding: 100px 0;
-  position: relative;
-  @media (max-width: 1160px) {
-    padding: 100px 0 40px 0;
-  }
-  @media (max-width: 860px) {
-    flex-direction: column;
-    padding: 0 0 30px 0;
-    margin: 80px 0 0px 0;
-  }
-`;
-const ButtonsRow = styled.div`
-  @media (max-width: 860px) {
-    justify-content: space-between;
-  }
-`;
-const AddLeft = styled.div`
-  width: 50%;
-  p {
-    max-width: 475px;
-  }
-  @media (max-width: 860px) {
-    width: 80%;
-    order: 2;
-    text-align: center;
-    h2 {
-      line-height: 3rem;
-      margin: 15px 0;
-    }
-    p {
-      margin: 0 auto;
-    }
-  }
-`;
-const AddRight = styled.div`
-  width: 50%;
-  position: absolute;
-  top: -70px;
-  right: 0;
-  @media (max-width: 860px) {
-    width: 80%;
-    position: relative;
-    order: 1;
-    top: -40px;
-  }
-`;
-const AddRightInner = styled.div`
-  width: 100%;
-`;
-const AddImgWrapp1 = styled.div`
-  width: 48%;
-  margin: 0 6% 10px 6%;
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  }
-`;
-const AddImgWrapp2 = styled.div`
-  width: 30%;
-  margin: 0 5% 10px 5%;
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  }
-`;
-const AddImgWrapp3 = styled.div`
-  width: 20%;
-  margin-left: 40%;
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-  }
-`;
-const AddImgWrapp4 = styled.div`
-  width: 30%;
-  margin: 0 5%auto;
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 1rem;
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
-    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
   }
 `;
