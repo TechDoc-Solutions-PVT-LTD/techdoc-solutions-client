@@ -44,12 +44,6 @@ export default function Team() {
       link: "https://deneth-pinsara.github.io/"
     },
     { 
-      img: Nadun, 
-      name: "Nadun Dilshan", 
-      role: "Associate Software Engineer - Fullstack",
-      link: "https://nadundilshan.netlify.app/"
-    },
-    { 
       img: Oshadhi, 
       name: "Oshadhi Anjana", 
       role: "Associate Software Engineer - Fullstack",
@@ -60,6 +54,12 @@ export default function Team() {
       name: "Dilruk Nimsara", 
       role: "Software Engineer - Fullstack",
       link: "https://www.linkedin.com/in/nimsara-mahagedara/"
+    },
+    { 
+      img: Nadun, 
+      name: "Nadun Dilshan", 
+      role: "Associate Software Engineer - Fullstack",
+      link: "https://nadundilshan.netlify.app/"
     },
     { 
       img: Thisaru, 
@@ -117,13 +117,17 @@ export default function Team() {
 
   return (
     <Wrapper id="team">
-      <div className="whiteBg">
+      <div className="whiteBg mt-20">
         <div className="container">
           <HeaderInfo>
             <h1 className="font40 extraBold">Our Team</h1>
             <p className="font13">
-              Skilled innovators and tech experts dedicated to delivering advanced software solutions <br />
-              that drive business growth and digital transformation.
+                  Our team at TechDoc Solutions is a dynamic group of
+                  innovators, developers, and problem-solvers dedicated to
+                  building cutting-edge software solutions.
+                  With a passion for technology and a commitment to excellence, we collaborate to
+                  turn ideas into reality, ensuring efficiency, scalability, and
+                  success for our clients.
             </p>
           </HeaderInfo>
 
